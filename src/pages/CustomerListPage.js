@@ -4,7 +4,7 @@ import axios from "axios";
 import CustomerCard from "../components/CustomerCard";
 import AddCustomer from "../components/AddCustomer";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://project-3-ironhack-server.onrender.com";
 
 function CustomerListPage() {
   const [customers, setCustomers] = useState([]);
@@ -20,19 +20,17 @@ function CustomerListPage() {
   // by setting the empty dependency array - []
   useEffect(() => {
     getAllCustomers();
-  }, [] );
+  }, []);
 
-  
   return (
     <div className="CustomerListPage">
-      
       <AddCustomer refreshCustomers={getAllCustomers} />
-      
-      { customers.map((customer) => <CustomerCard key={customer._id} {...customer} />  )} 
-       
+
+      {customers.map((customer) => (
+        <CustomerCard key={customer._id} {...customer} />
+      ))}
     </div>
   );
 }
 
 export default CustomerListPage;
-

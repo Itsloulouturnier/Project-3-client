@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://project-3-ironhack-server.onrender.com";
 
 function AddCustomer(props) {
   const [title, setTitle] = useState("");
@@ -12,7 +12,7 @@ function AddCustomer(props) {
     e.preventDefault();
 
     const requestBody = { title, description, firstname };
-    
+
     axios
       .post(`${API_URL}/api/customers`, requestBody)
       .then((response) => {
@@ -24,7 +24,6 @@ function AddCustomer(props) {
       })
       .catch((error) => console.log(error));
   };
-
 
   return (
     <div className="AddCustomer">
@@ -47,7 +46,7 @@ function AddCustomer(props) {
           onChange={(e) => setDescription(e.target.value)}
         />
 
-<label>First Name:</label>
+        <label>First Name:</label>
         <textarea
           type="text"
           name="first name"

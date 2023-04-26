@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function SignupPage() {
-  const API_URL = "http://localhost:5005";
+  const API_URL = "https://project-3-ironhack-server.onrender.com";
 
   const { setUser } = useContext(UserContext);
   // This function will allow us to navigate between routes
